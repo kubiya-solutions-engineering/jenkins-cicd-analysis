@@ -191,6 +191,4 @@ resource "kubiya_webhook" "jenkins_webhook" {
 
   agent       = kubiya_agent.jenkins_cicd_maintainer.name
   destination = var.notification_channel
-
-  labels = ["ci-cd", "jenkins-webhook", "build-monitoring"]
 }
