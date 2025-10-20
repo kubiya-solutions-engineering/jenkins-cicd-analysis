@@ -182,10 +182,7 @@ resource "kubiya_webhook" "jenkins_webhook" {
   team_name = var.ms_teams_notification ? var.ms_teams_team_name : null
 
   prompt = var.custom_webhook_prompt != null ? var.custom_webhook_prompt : templatefile("${path.module}/prompts/jenkins_build_analysis.tpl", {
-    enable_summary_channel     = var.enable_summary_channel
-    enable_detailed_analysis   = var.enable_detailed_analysis
-    enable_security_scanning   = var.enable_security_scanning
-    enable_performance_metrics = var.enable_performance_metrics
+    enable_summary_channel = var.enable_summary_channel
   })
 
   agent       = kubiya_agent.jenkins_cicd_maintainer.name
