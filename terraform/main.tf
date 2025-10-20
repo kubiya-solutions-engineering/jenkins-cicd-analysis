@@ -71,13 +71,8 @@ resource "kubiya_source" "jenkins_tooling" {
 
 # Optional: Additional tooling sources for enhanced capabilities
 resource "kubiya_source" "git_tooling" {
-  url         = "https://github.com/kubiyabot/community-tools/tree/main/git"
+  url         = "https://github.com/kubiyabot/community-tools/tree/main/github"
   description = "Git tools for repository operations"
-}
-
-resource "kubiya_source" "docker_tooling" {
-  url         = "https://github.com/kubiyabot/community-tools/tree/main/docker"
-  description = "Docker tools for containerized CI/CD workflows"
 }
 
 # Create secrets for Jenkins credentials
@@ -115,8 +110,7 @@ resource "kubiya_agent" "jenkins_cicd_maintainer" {
 
   sources = [
     kubiya_source.jenkins_tooling.name,
-    kubiya_source.git_tooling.name,
-    kubiya_source.docker_tooling.name,
+    kubiya_source.git_tooling.name
   ]
 
   # Dynamic integrations based on configuration
@@ -139,8 +133,6 @@ resource "kubiya_agent" "jenkins_cicd_maintainer" {
   }
 
   is_debug_mode = var.debug_mode
-
-  labels = ["ci-cd", "jenkins", "devops", "pipeline-analysis"]
 }
 
 # Knowledge base for Jenkins best practices

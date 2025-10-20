@@ -85,9 +85,6 @@ This Terraform module creates a Jenkins CI/CD maintainer that monitors Jenkins j
 | `monitor_failed_builds_only` | Only monitor failed builds | `true` |
 | `enable_branch_filter` | Enable branch filtering | `false` |
 | `branch_filter` | Branch name to filter on | `null` |
-| `enable_detailed_analysis` | Enable detailed build analysis | `true` |
-| `enable_security_scanning` | Enable security scanning | `true` |
-| `enable_performance_metrics` | Enable performance metrics | `true` |
 
 ## 🛠️ Features
 
@@ -95,13 +92,11 @@ This Terraform module creates a Jenkins CI/CD maintainer that monitors Jenkins j
 - **Real-time Monitoring**: Monitors Jenkins jobs for failures
 - **Log Analysis**: Analyzes build logs and error patterns
 - **Root Cause Identification**: Identifies common failure causes
-- **Performance Metrics**: Tracks build performance and bottlenecks
 
 ### Smart Solutions
 - **Contextual Fixes**: Provides specific solutions based on error patterns
 - **Code Examples**: Includes code snippets and configuration examples
 - **Best Practices**: Suggests Jenkins best practices and optimizations
-- **Security Recommendations**: Provides security improvement suggestions
 
 ### Integration Capabilities
 - **Jenkins API**: Full integration with Jenkins REST API
@@ -164,9 +159,6 @@ The module supports various environment variables for fine-tuning:
 ```hcl
 environment_variables = {
   KUBIYA_TOOL_TIMEOUT        = "500"
-  ENABLE_DETAILED_ANALYSIS   = "true"
-  ENABLE_SECURITY_SCANNING   = "true"
-  ENABLE_PERFORMANCE_METRICS = "true"
   LOG_LEVEL                  = "INFO"
 }
 ```
