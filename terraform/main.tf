@@ -125,7 +125,7 @@ resource "kubiya_agent" "jenkins_cicd_maintainer" {
     var.enable_teams_notifications ? ["teams"] : []
   )
 
-  users  = var.kubiya_users
+  users  = []
   groups = var.kubiya_groups_allowed_groups
 
   environment_variables = {

@@ -64,13 +64,6 @@ variable "enable_teams_notifications" {
   default     = false
 }
 
-# Access Control
-variable "kubiya_users" {
-  description = "List of users allowed to interact with the teammate (e.g., ['user1@company.com', 'user2@company.com'])."
-  type        = list(string)
-  default     = []
-}
-
 variable "kubiya_groups_allowed_groups" {
   description = "Groups allowed to interact with the teammate (e.g., ['Admin', 'DevOps'])."
   type        = list(string)
