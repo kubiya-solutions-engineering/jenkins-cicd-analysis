@@ -81,24 +81,6 @@ variable "kubiya_runner" {
   }
 }
 
-# AI Model Configuration
-variable "llm_model" {
-  description = "Large Language Model to use for the agent (e.g., 'azure/gpt-4', 'azure/gpt-4-turbo')."
-  type        = string
-  default     = "azure/gpt-4"
-
-  validation {
-    condition = contains([
-      "azure/gpt-4",
-      "azure/gpt-4-turbo",
-      "azure/gpt-35-turbo",
-      "openai/gpt-4",
-      "openai/gpt-4-turbo-preview"
-    ], var.llm_model)
-    error_message = "LLM model must be one of the supported models."
-  }
-}
-
 # Jenkins Webhook Filter Configuration
 variable "monitor_failed_builds_only" {
   description = "Only monitor failed builds (if false, will monitor all build results)."

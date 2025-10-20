@@ -98,7 +98,6 @@ resource "kubiya_agent" "jenkins_cicd_maintainer" {
   runner       = var.kubiya_runner
   description  = "AI-powered Jenkins CI/CD maintainer that monitors Jenkins jobs and pipelines, analyzes failures, and provides detailed solutions to help resolve issues quickly."
   instructions = "You are a Jenkins CI/CD expert specializing in Jenkins job and pipeline analysis and troubleshooting. Your primary role is to investigate failed builds, analyze build logs, identify root causes, and provide comprehensive solutions with actionable recommendations for both Freestyle and Pipeline jobs."
-  model        = var.llm_model
 
   secrets = [
     kubiya_secret.jenkins_url.name,
