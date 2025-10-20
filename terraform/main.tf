@@ -66,13 +66,11 @@ variable "teams_webhook_url" {
 # Jenkins Tooling - Allows the CI/CD Maintainer to use Jenkins tools
 resource "kubiya_source" "jenkins_tooling" {
   url         = "https://github.com/kubiyabot/community-tools/tree/main/jenkins"
-  description = "Jenkins community tools for CI/CD operations"
 }
 
 # Optional: Additional tooling sources for enhanced capabilities for Github
 resource "kubiya_source" "git_tooling" {
   url         = "https://github.com/kubiyabot/community-tools/tree/main/github"
-  description = "Git tools for repository operations"
 }
 
 # Create secrets for Jenkins credentials
