@@ -69,7 +69,7 @@ resource "kubiya_source" "jenkins_tooling" {
   description = "Jenkins community tools for CI/CD operations"
 }
 
-# Optional: Additional tooling sources for enhanced capabilities
+# Optional: Additional tooling sources for enhanced capabilities for Github
 resource "kubiya_source" "git_tooling" {
   url         = "https://github.com/kubiyabot/community-tools/tree/main/github"
   description = "Git tools for repository operations"
